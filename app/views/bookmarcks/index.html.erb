@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookmarcks</h1>
+
+<%= render "form", bookmarck: @bookmarck %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Direction</th>
+      <th>Category</th>
+      <th>Bookind</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmarcks.each do |bookmarck| %>
+     <%= render 'bookmarck', bookmarck: bookmarck  %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmarck', new_bookmarck_path %>
+<%= pie_chart @pie %>

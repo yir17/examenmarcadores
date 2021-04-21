@@ -1,0 +1,22 @@
+<%= form_with(model: bookind) do |form| %>
+  <% if bookind.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookind.errors.count, "error") %> prohibited this bookind from being saved:</h2>
+
+      <ul>
+        <% bookind.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

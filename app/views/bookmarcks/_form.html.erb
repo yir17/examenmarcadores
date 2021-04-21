@@ -1,0 +1,39 @@
+<%= form_with(model: bookmarck, local: false) do |form| %>
+  <% if bookmarck.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookmarck.errors.count, "error") %> prohibited this bookmarck from being saved:</h2>
+
+      <ul>
+        <% bookmarck.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :direction %>
+    <%= form.text_field :direction %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.all.collect {|c| [c.name, c.id]}, {} ,id: :bookmark_category_id, include_blank:false %>
+  </div>
+
+   <div class="field">
+    <%= form.label :bookind_id %>
+    <%= form.select :bookind_id, Bookind.all.collect {|k| [k.name, k.id]}, {} ,id: :bookmark_bookind_id, include_blank:false %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+
+<% end %>

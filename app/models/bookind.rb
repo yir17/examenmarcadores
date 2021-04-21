@@ -1,0 +1,2 @@
+class Bookind < ApplicationRecord
+end

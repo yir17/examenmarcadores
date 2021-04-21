@@ -1,0 +1,7 @@
+<td><%= bookmarck.name %></td>
+<td><%= bookmarck.direction %></td>
+<td><%= bookmarck.bookind.name %></td>
+<td><%= bookmarck.category.name %></td>
+<td><%= link_to 'Show', bookmarck %></td>
+<td><%= link_to 'Edit', edit_bookmarck_path(bookmarck) %></td>
+<td><%= link_to 'Destroy', bookmarck, method: :delete, data: { confirm: 'Are you sure?' } %></td>

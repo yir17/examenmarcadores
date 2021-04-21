@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bookinds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookinds.each do |bookind| %>
+      <tr>
+        <td><%= bookind.name %></td>
+        <td><%= link_to 'Show', bookind %></td>
+        <td><%= link_to 'Edit', edit_bookind_path(bookind) %></td>
+        <td><%= link_to 'Destroy', bookind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookind', new_bookind_path %>
